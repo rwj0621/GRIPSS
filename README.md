@@ -24,8 +24,41 @@
 
         gridss \
         -r /data/share/Genomics_datasets/HCC1395/reference_genome/GRCh38/GRCh38.d1.vd1.fa \
-        -o /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/EA_N_1/all_calls.vcf \
+        -o /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/EA_T_1/all_calls.vcf \
         -b /data/renweijie/Software/SV_tools/GRIDSS/example/ENCFF356LFX.bed \
         /data/share/Genomics_datasets/HCC1395/WGS/WGS_EA_N_1.bwa.dedup.bam \
         /data/share/Genomics_datasets/HCC1395/WGS/WGS_EA_T_1.bwa.dedup.bam
+### 3.安装 [GRIPSS](https://bioconda.github.io/recipes/hmftools-gripss/README.html) 过滤体细胞突变
+* 安装 GRIPSS
+
+        conda install hmftools-gripss
+* 找安装在conda里面的 jar包
+
+        find $CONDA_PREFIX -name "gripss.jar"
+* 找到的路径
+
+        /data/renweijie/anaconda3/envs/gridss/share/hmftools-gripss-2.4-0/gripss.jar
+* 看GRIPSS的版本及参数 v2.4
+
+        gripss -help
+### 4.运行 GRIPSS
+
+        java -jar /data/renweijie/anaconda3/envs/gridss/share/hmftools-gripss-2.4-0/gripss.jar \
+        -sample WGS_EA_T_1 \
+        -reference WGS_EA_N_1 \
+        -ref_genome_version 38 \
+        -ref_genome /data/share/Genomics_datasets/HCC1395/reference_genome/GRCh38/GRCh38.d1.vd1.fa \
+        -vcf /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/EA_T_1/all_calls.vcf \
+        -output_dir /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/EA_T_1
+### 5.脚本批量处理
+* 创建样本路径列表
+* 创建批量运行脚本
+* 运行脚本
+
+        chmod +x /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/HCC1395_ALL_samples_run_SV.sh
+        cd /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/
+        nohup ./HCC1395_ALL_samples_run_SV.sh > batch_pipeline_final.log 2>&1 &
+        
+        
+
 
