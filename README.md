@@ -50,7 +50,7 @@
         -ref_genome /data/share/Genomics_datasets/HCC1395/reference_genome/GRCh38/GRCh38.d1.vd1.fa \
         -vcf /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/EA_T_1/all_calls.vcf \
         -output_dir /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/EA_T_1
-### 5.脚本批量处理
+### 5.[脚本](https://github.com/rwj0621/GRIPSS/blob/main/HCC1395_ALL_samples_run_SV.sh)批量处理
 * 创建样本路径列表
 * 创建批量运行脚本
 * 运行脚本
