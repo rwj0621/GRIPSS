@@ -51,7 +51,7 @@
         -vcf /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/EA_T_1/all_calls.vcf \
         -output_dir /data/renweijie/Software/SV_tools/GRIDSS/HCC1395/EA_T_1
 ### 5.[脚本](https://github.com/rwj0621/GRIPSS/blob/main/HCC1395_ALL_samples_run_SV.sh)批量处理
-* 创建样本路径列表
+* 创建[样本路径列表](https://github.com/rwj0621/GRIPSS/blob/main/HCC1395_list.txt)
 * 创建批量运行脚本
 * 运行脚本
 
